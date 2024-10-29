@@ -26,36 +26,27 @@
             <p>En VirtDesk, ofrecemos soluciones innovadoras para la virtualización de escritorios, accesibles y de alto rendimiento, diseñadas para satisfacer tus necesidades.</p>
         </section>
 
-<!-- Sección de Registro -->
-<section class="register-container">
-    <h1>Registrarse YA</h1>
-    <form action="registro.php" method="post">
-        <div class="register-box">
-            <input type="email" class="input-field" name="email" placeholder="Correo electrónico" required>
-            <input type="password" class="input-field" name="password" placeholder="Contraseña" required>
-            <button type="submit" class="register-btn">Registrarse</button>
-        </div>
-    </form>
-</section>
+        <!-- Sección de Inicio de Sesión -->
+        <section class="login-container">
+            <h1>Iniciar Sesión</h1>
+            <p>Accede a tu cuenta para disfrutar de nuestros servicios.</p>
 
-<!-- Sección de Inicio de Sesión -->
-<section class="login-container">
-    <h1>Iniciar Sesión</h1>
-    <p>Accede a tu cuenta para disfrutar de nuestros servicios.</p>
+            <!-- Mensaje de error si existe -->
+            <?php if (isset($_GET['error'])): ?>
+                <div class="error-message">Correo electrónico o contraseña incorrectos.</div>
+            <?php endif; ?>
+            
+            <form action="login.php" method="post">
+                <div class="login-box">
+                    <input type="email" class="input-field" name="email" placeholder="Correo electrónico" required>
+                    <input type="password" class="input-field" name="password" placeholder="Contraseña" required>
+                    <button type="submit" class="login-btn">Iniciar Sesión</button>
+                </div>
+            </form>
 
-    <!-- Mensaje de error si existe -->
-    <?php if (isset($_GET['error'])): ?>
-        <div class="error-message">Correo electrónico o contraseña incorrectos.</div>
-    <?php endif; ?>
-    
-    <form action="login.php" method="post">
-        <div class="login-box">
-            <input type="email" class="input-field" name="email" placeholder="Correo electrónico" required>
-            <input type="password" class="input-field" name="password" placeholder="Contraseña" required>
-            <button type="submit" class="login-btn">Iniciar Sesión</button>
-        </div>
-    </form>
-</section>
+            <!-- Enlace para registrar -->
+            <p>¿No tienes una cuenta? <a href="registro.html">Regístrate aquí</a></p>
+        </section>
     </main>
 </body>
 </html>
