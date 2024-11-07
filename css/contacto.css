@@ -10,7 +10,6 @@ body {
     background-color: #f4f4f4;
     color: #333;
 }
-
 /* Navbar */
 header {
     background-color: #1a1a2e;
@@ -21,11 +20,38 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
+.logo {
+    font-size: 1.5rem;
+    color: #fff;  /* Asegura que el logo sea blanco */
+    font-weight: 700;
+}
+
+
+/* Estilos del botón de hamburguesa */
+.nav-mobile {
+    display: none; /* Esconde el botón por defecto */
+    background: transparent; /* Fondo transparente */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    z-index: 2;
+}
+
+.nav-mobile span {
+    background-color: #e92525;
+    width: 100%;
+    height: 3px;
+    margin: 5px 0;
+    transition: transform 0.3s ease;
+}
+
+/* Estilos para el menú de navegación */
 .nav-links {
     list-style: none;
     display: flex;
+    align-items: center;
 }
 
 .nav-links li {
@@ -49,10 +75,51 @@ header {
     border-radius: 5px;
 }
 
-.logo {
-    font-size: 1.5rem;
-    color: #fff;
-    font-weight: 700;
+/* Estilos específicos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Mantener oculto por defecto */
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Ajusta según sea necesario */
+        right: -20px; /* Alineación más a la derecha (ajustado) */
+        width: 200px; /* Ancho fijo del menú */
+        background-color: #1a1a2e; /* Asegúrate de que el fondo sea el mismo */
+        border-radius: 0 0 8px 8px; /* Bordes redondeados en la parte inferior */
+        z-index: 1;
+        padding: 10px 0; /* Espaciado vertical */
+    }
+    
+    .nav-links.open {
+        display: flex; /* Muestra el menú cuando está abierto */
+    }
+
+    .nav-links li {
+        margin: 5px 0; /* Reduce el margen entre los elementos */
+    }
+    
+    .nav-links a {
+        padding: 10px 15px; /* Ajusta el padding para hacerlo más compacto */
+        display: block;
+        color: #fff;
+    }
+
+    .nav-mobile {
+        display: flex; /* Asegúrate de que el botón de hamburguesa sea visible */
+    }
+
+    /* Animación del botón de hamburguesa */
+    .nav-mobile.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .nav-mobile.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav-mobile.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
 }
 
 /* Contact Hero Section */
@@ -147,5 +214,42 @@ header {
     width: 100%;
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+footer {
+    padding: 20px 40px;
+    background-color: #1a1a2e;
+    color: #fff;
+    font-size: 14px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-content p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.language-selector {
+    margin-left: auto;
+    text-align: right;
+    padding-left: 20px;
+    min-width: 150px;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .language-selector {
+        margin-top: 15px;
+        padding-left: 0;
+    }
 }
 
