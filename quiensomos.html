@@ -8,43 +8,65 @@
 </head>
 <body>
     <header>
-        <nav class="navbar">
+        <nav class="navbar" aria-label="Menú de navegación principal">
             <div class="logo">VirtDesk</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="servicios.html">Servicios</a></li>
-                <li><a href="quiensomos.html" class="active">Quiénes Somos</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
+            <button class="nav-mobile" id="nav-mobile" aria-controls="nav-menu" aria-expanded="false" aria-label="Abrir menú de navegación">
+                <img src="assets/img/icons8-menú.svg" alt="Icono de menú" />
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="nav-menu" role="menu">
+                <li role="none"><a href="index.html" class="active" role="menuitem">Inicio</a></li>
+                <li role="none"><a href="servicios.html" role="menuitem">Servicios</a></li>
+                <li role="none"><a href="quiensomos.html" role="menuitem">Quiénes Somos</a></li>
+                <li role="none"><a href="contacto.html" role="menuitem">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <!-- Sección de Misión -->
-        <section class="hero">
-            <h1>Nuestra Misión</h1>
+        <section class="hero" aria-labelledby="mission-title" role="listitem" tabindex="0">
+            <h1 id="mission-title">Nuestra Misión</h1>
             <p>Hacer que la tecnología sea accesible para todos a través de soluciones de virtualización eficientes y accesibles.</p>
         </section>
 
         <!-- Sección de Sobre Nosotros -->
-        <section id="about-us" class="about-section">
-            <h2>Quiénes Somos</h2>
+        <section id="about-us" class="about-section" aria-labelledby="about-title" role="listitem" tabindex="0">
+            <h2 id="about-title">Quiénes Somos</h2>
             <p>En VirtDesk, estamos comprometidos con ofrecer soluciones tecnológicas que permitan a personas con bajos recursos acceder a entornos de trabajo virtuales, sin la necesidad de equipos costosos. Creemos que el acceso a la tecnología debe ser un derecho para todos.</p>
             
             <div class="about-content">
-                <div class="about-card">
-                    <h3>Nuestro Enfoque</h3>
+                <div class="about-card" aria-labelledby="focus-title"  role="listitem" tabindex="0">
+                    <h3 id="focus-title" >Nuestro Enfoque</h3>
                     <p>Utilizamos tecnología avanzada de virtualización para crear soluciones accesibles y eficientes que optimizan el rendimiento en dispositivos de baja gama o con conexiones limitadas.</p>
                 </div>
 
-                <div class="about-card">
-                    <h3>Visión y Valores</h3>
+                <div class="about-card" aria-labelledby="vision-title"  role="listitem" tabindex="0">
+                    <h3 id="vision-title">Visión y Valores</h3>
                     <p>Promovemos la inclusión tecnológica, la sostenibilidad y la innovación, asegurando que cualquier persona, sin importar su situación, pueda acceder a herramientas digitales esenciales.</p>
                 </div>
             </div>
         </section>
     </main>
 
-
+    <script src="js/navegacion.js"></script>
+    <footer>
+        <div class="footer-content">
+            <p>© 2024 VirtDesk. Todos los derechos reservados.</p>
+            <div id="google_translate_element" class="language-selector" aria-label="Selector de idioma"></div>
+        </div>
+    
+        <script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement(
+                    { pageLanguage: 'es', includedLanguages: 'en,de,zh-CN,pt', layout: google.translate.TranslateElement.InlineLayout.SIMPLE },
+                    'google_translate_element'
+                );
+            }
+        </script>
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    </footer>
 </body>
 </html>
